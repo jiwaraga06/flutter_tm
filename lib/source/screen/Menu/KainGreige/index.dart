@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 import 'package:flutter_tm/source/router/string.dart';
-import 'package:flutter_tm/source/screen/Menu/LotProduksi/index.dart';
 
 class KainGreige extends StatefulWidget {
   const KainGreige({Key? key}) : super(key: key);
