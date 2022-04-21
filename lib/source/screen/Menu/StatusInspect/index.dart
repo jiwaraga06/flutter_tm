@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 
 class StatusInspect extends StatefulWidget {
-  const StatusInspect({ Key? key }) : super(key: key);
+  const StatusInspect({Key? key}) : super(key: key);
 
   @override
   State<StatusInspect> createState() => _StatusInspectState();
@@ -21,6 +23,7 @@ class _StatusInspectState extends State<StatusInspect> {
               decoration: const InputDecoration(
                 hintText: 'Masukan Jenis Obat',
               ),
+              onEditingComplete: () {},
             ),
           ),
         ],

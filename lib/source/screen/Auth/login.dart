@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_tm/source/router/string.dart';
-import 'package:flutter_tm/source/screen/Dashboard/dashboard.dart';
-import 'package:flutter_tm/source/screen/Menu/KainGreige/index.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatefulWidget {
@@ -85,9 +82,7 @@ class _LoginState extends State<Login> {
                   width: MediaQuery.of(context).size.width / 2.5,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.pushNamedAndRemoveUntil(context, KAIN_GREIGE, (route) => false);
-                      Navigator.pushReplacementNamed(context, DASHBOARD);
-                      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => KainGreige()));
+                      Navigator.pushReplacementNamed(context, KAIN_GREIGE);
                     },
                     style: ElevatedButton.styleFrom(
                       elevation: 4.0,

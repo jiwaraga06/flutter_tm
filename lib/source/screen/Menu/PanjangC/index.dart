@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 
 class PanjangC extends StatefulWidget {
-  const PanjangC({ Key? key }) : super(key: key);
+  const PanjangC({Key? key}) : super(key: key);
 
   @override
   State<PanjangC> createState() => _PanjangCState();
@@ -21,6 +23,9 @@ class _PanjangCState extends State<PanjangC> {
               decoration: const InputDecoration(
                 hintText: 'Panjang C',
               ),
+              onEditingComplete: () {
+                
+              },
             ),
           ),
         ],

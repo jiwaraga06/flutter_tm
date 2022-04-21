@@ -73,29 +73,11 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<TmCubit>(context).getMenu();
+    
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF61A4BC),
-        leading: currentIndex == 0 ? Container() : IconButton(onPressed: onBack, icon: Icon(Icons.arrow_back)),
-        centerTitle: true,
-        title: BlocBuilder<TmCubit, TmState>(builder: (context, state) {
-          if (state is TmMenu) {
-            return Text(judul[state.menu!].toString());
-          }
-          return Text(judul[currentIndex].toString());
-        }),
-        actions: [
-          currentIndex == 11
-              ? Container()
-              : IconButton(
-                  onPressed: () {
-                    BlocProvider.of<TmCubit>(context).onNext(1);
-                  },
-                  icon: Icon(Icons.arrow_forward_outlined)),
-        ],
-      ),
-      body: body[currentIndex],
-    );
+        appBar: AppBar(
+          backgroundColor: Color(0xFF61A4BC),
+        ),
+        body: body[currentIndex]);
   }
 }

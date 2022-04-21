@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 import 'package:flutter_tm/source/router/string.dart';
+import 'package:flutter_tm/source/screen/Menu/LotProduksi/index.dart';
 
 class KainGreige extends StatefulWidget {
   const KainGreige({Key? key}) : super(key: key);
@@ -15,9 +16,9 @@ class _KainGreigeState extends State<KainGreige> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Kain'),
-      // ),
+      appBar: AppBar(
+        title: const Text('Kain Greige'),
+      ),
       body: ListView(
         children: [
           Padding(
@@ -30,19 +31,11 @@ class _KainGreigeState extends State<KainGreige> {
                 hintText: 'Masukan Kode',
               ),
               onEditingComplete: () {
-                Navigator.pushNamed(context, LOT_PRODUKSI);
-                // BlocProvider.of<TmCubit>(context).kain(controllerKode.text);
-              },
-              onChanged: (value) {
-                BlocProvider.of<TmCubit>(context).kain(value.toString());
+                BlocProvider.of<TmCubit>(context).kain(controllerKode.text.toString());
+                Navigator.pushReplacementNamed(context, LOT_PRODUKSI);
               },
             ),
           ),
-          IconButton(
-                  onPressed: () {
-                    BlocProvider.of<TmCubit>(context).onNext(1);
-                  },
-                  icon: Icon(Icons.arrow_forward_outlined)),
         ],
       ),
     );

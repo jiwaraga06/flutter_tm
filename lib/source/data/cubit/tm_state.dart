@@ -9,14 +9,16 @@ class TmSplashLoading extends TmState {}
 
 class TmSplashLoaded extends TmState {}
 
+class TmLoading extends TmState {}
+
 class TmKain extends TmState {
   final String? kain;
 
-  TmKain({required this.kain});
+  TmKain({this.kain});
 }
 
 class TmMenu extends TmState {
   final int? menu;
 
-  TmMenu({required this.menu});
+  TmMenu(this.menu);
 }

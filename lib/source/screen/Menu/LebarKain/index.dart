@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 
 class LebarKain extends StatefulWidget {
   const LebarKain({Key? key}) : super(key: key);
@@ -48,6 +50,9 @@ class _LebarKainState extends State<LebarKain> {
                     Expanded(
                       child: TextFormField(
                         decoration: const InputDecoration(),
+                        onEditingComplete: () {
+                          
+                        },
                       ),
                     ),
                   ],
