@@ -12,6 +12,7 @@ class KainGreige extends StatefulWidget {
 
 class _KainGreigeState extends State<KainGreige> {
   TextEditingController controllerKode = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class _KainGreigeState extends State<KainGreige> {
                 hintText: 'Masukan Kode',
               ),
               onEditingComplete: () {
-                BlocProvider.of<TmCubit>(context).kain(controllerKode.text.toString());
+                BlocProvider.of<TmCubit>(context).savekain(controllerKode.text.toString());
                 Navigator.pushReplacementNamed(context, LOT_PRODUKSI);
               },
             ),

@@ -6,6 +6,7 @@ import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 import 'package:flutter_tm/source/router/string.dart';
 import 'package:flutter_tm/source/screen/Auth/login.dart';
 import 'package:flutter_tm/source/screen/Auth/register.dart';
+import 'package:flutter_tm/source/screen/CekData/index.dart';
 import 'package:flutter_tm/source/screen/Dashboard/dashboard.dart';
 import 'package:flutter_tm/source/screen/Menu/Grade/index.dart';
 import 'package:flutter_tm/source/screen/Menu/JenisObat/index.dart';
@@ -155,6 +156,14 @@ class RouterNavigation {
                     myRepository: myRepository,
                   ),
                   child: const StatusInspect(),
+                ));
+      case CEK_DATA:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => TmCubit(
+                    myRepository: myRepository,
+                  ),
+                  child: const CekData(),
                 ));
 
       default:

@@ -13,7 +13,7 @@ class TmCubit extends Cubit<TmState> {
 
   void splash() async {
     emit(TmSplashLoading());
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     emit(TmSplashLoaded());
   }
 
@@ -24,18 +24,83 @@ class TmCubit extends Cubit<TmState> {
     print(androidInfo.androidId.toString());
   }
 
-  void kain(value) async{
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setString('kain', value);
-  }
-
-
   void getDataInsert() async {
     emit(TmLoading());
     SharedPreferences pref = await SharedPreferences.getInstance();
     var kain = pref.getString('kain');
-    if(kain != null){
+    var lotProduksi = pref.getString('lotProduksi');
+    var mesin = pref.getString('mesin');
+    emit(TmLoaded());
+    if (kain != null) {
       emit(TmKain(kain: kain));
     }
+    // if (lotProduksi != null) {
+    //   emit(TmLotProduksi(lotProduksi: lotProduksi));
+    // }
+    // if (mesin != null) {
+    //   emit(TmMesin(mesin: mesin));
+    // }
+  }
+
+  void savekain(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('kain', value);
+  }
+
+  void saveLotProduksi(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('lotProduksi', value);
+  }
+
+  void saveMesin(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('mesin', value);
+  }
+
+  void saveBeam(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('beam', value);
+  }
+
+  void jenisObat(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('obat', value);
+  }
+
+  void lebarKain(valueS, valueW, valueL) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('S_kain', valueS);
+    pref.setString('W_kain', valueW);
+    pref.setString('L_kain', valueL);
+  }
+
+  void pointRusak(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('point', value);
+  }
+
+  void grade(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('grade', value);
+  }
+
+  void panjangA(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('panjangA', value);
+  }
+
+  void panjangB(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('panjangB', value);
+  }
+
+  void panjangC(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('panjangC', value);
+  }
+
+  void statusInspect(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('statusInspect', value);
   }
 }

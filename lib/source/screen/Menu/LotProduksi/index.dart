@@ -11,6 +11,7 @@ class LotProduksi extends StatefulWidget {
 }
 
 class _LotProduksiState extends State<LotProduksi> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<TmCubit>(context).getDataInsert();
@@ -26,25 +27,27 @@ class _LotProduksiState extends State<LotProduksi> {
         ),
         body: ListView(
           children: [
-            BlocBuilder<TmCubit, TmState>(
-              builder: (context, state) {
-                if (state is TmLoading) {
-                  return const Text('loading');
-                }
-                var kain = (state as TmKain).kain;
-                if (kain!.isEmpty) {
-                  return const Text("kainss");
-                }
-                return Text(kain);
-              },
-            ),
+            // BlocBuilder<TmCubit, TmState>(
+            //   builder: (context, state) {
+            //     if (state is TmLoading) {
+            //       return const Text('loading');
+            //     }
+            //     var kain = (state as TmKain).kain;
+            //     if (kain!.isEmpty) {
+            //       return const Text("kainss");
+            //     }
+            //     return Text(kain);
+            //   },
+            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
+                controller: controller,
                 decoration: const InputDecoration(
                   hintText: 'Masukan Kode',
                 ),
                 onEditingComplete: () {
+                  BlocProvider.of<TmCubit>(context).saveLotProduksi(controller);
                   Navigator.pushReplacementNamed(context, NO_MESIN);
                 },
               ),
