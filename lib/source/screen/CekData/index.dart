@@ -44,9 +44,7 @@ class _CekDataState extends State<CekData> {
                       // Text(kain),
                       const Padding(
                         padding: EdgeInsets.only(bottom: 12.0),
-                        child: Text('Data Hasil Inputan', 
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18)),
+                        child: Text('Data Hasil Inputan', textAlign: TextAlign.center, style: TextStyle(fontSize: 18)),
                       ),
                       Table(
                         border: TableBorder.all(color: Colors.transparent),
@@ -163,18 +161,18 @@ class _CekDataState extends State<CekData> {
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.blue[700],
-                                fixedSize: Size.fromHeight(35),
+                                fixedSize: const Size.fromHeight(35),
                               ),
-                              child: Text('Kembali ke Point Rusak'),
+                              child: const Text('Kembali ke Point Rusak'),
                             ),
                             const SizedBox(width: 10.0),
                             ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.green[700],
-                                fixedSize: Size.fromHeight(35),
+                                fixedSize: const Size.fromHeight(35),
                               ),
-                              child: Text('SIMPAN'),
+                              child: const Text('SIMPAN'),
                             ),
                           ],
                         ),
