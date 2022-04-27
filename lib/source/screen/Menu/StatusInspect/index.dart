@@ -11,10 +11,11 @@ class StatusInspect extends StatefulWidget {
 }
 
 class _StatusInspectState extends State<StatusInspect> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         title: const Text('Status Inspect'),
         leading: IconButton(
           onPressed: () {
@@ -28,11 +29,15 @@ class _StatusInspectState extends State<StatusInspect> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: controller,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Status Inspect',
               ),
-              onEditingComplete: () {},
+              onEditingComplete: () {
+                BlocProvider.of<TmCubit>(context).statusInspect(controller.text);
+                Navigator.pushReplacementNamed(context, CEK_DATA);
+              },
             ),
           ),
         ],
