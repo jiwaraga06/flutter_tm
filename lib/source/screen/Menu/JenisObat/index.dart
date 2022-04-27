@@ -30,7 +30,6 @@ class _JenisObatState extends State<JenisObat> {
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: controller,
-              maxLength: 1,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Jenis Obat',

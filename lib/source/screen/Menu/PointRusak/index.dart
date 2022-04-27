@@ -29,7 +29,6 @@ class _PointRusakState extends State<PointRusak> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
-              maxLength: 1,
               controller: controller,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
