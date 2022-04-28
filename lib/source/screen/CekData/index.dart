@@ -24,18 +24,23 @@ class _CekDataState extends State<CekData> {
           icon: const Icon(Icons.arrow_back),
         ),
       ),
-      body: ListView(
-        children: [
-          BlocBuilder<TmCubit, TmState>(
-            builder: (context, state) {
-              if (state is TmLoading) {
-                return const Text('loading');
-              }
-              // var kain = (state as TmKain).kain;
-              // if (kain!.isEmpty) {
-              //   return const Text("kainss");
-              // }
-              return Container(
+      body: BlocBuilder<TmCubit, TmState>(
+        builder: (context, state) {
+          if (state is TmLoading) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Center(child: CircularProgressIndicator()),
+              ],
+            );
+          }
+          // var kain = (state as TmKain).kain;
+          // if (kain!.isEmpty) {
+          //   return const Text("kainss");
+          // }
+          return ListView(
+            children: [
+              Container(
                   margin: const EdgeInsets.all(8.0),
                   padding: const EdgeInsets.all(8.0),
                   child: ListView(
@@ -178,10 +183,10 @@ class _CekDataState extends State<CekData> {
                         ),
                       )
                     ],
-                  ));
-            },
-          ),
-        ],
+                  )),
+            ],
+          );
+        },
       ),
     );
   }

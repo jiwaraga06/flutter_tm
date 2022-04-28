@@ -27,15 +27,16 @@ class TmCubit extends Cubit<TmState> {
 
   void getDataInsert() async {
     emit(TmLoading());
+    await Future.delayed(const Duration(seconds: 2));
     SharedPreferences pref = await SharedPreferences.getInstance();
     var kain = pref.getString('kain');
     var lotProduksi = pref.getString('lotProduksi');
     var mesin = pref.getString('mesin');
     var beam = pref.getString('beam');
     var obat = pref.getString('obat');
-    var s_Kain = pref.getString('s_Kain');
-    var w_Kain = pref.getString('w_Kain');
-    var l_Kain = pref.getString('l_Kain');
+    var sKain = pref.getString('s_Kain');
+    var wKain = pref.getString('w_Kain');
+    var lKain = pref.getString('l_Kain');
     emit(TmLoaded());
     if (kain != null) {
       emit(TmKain(kain: kain));
@@ -52,8 +53,8 @@ class TmCubit extends Cubit<TmState> {
     if (obat != null) {
       emit(TmKain(kain: kain));
     }
-    if (l_Kain != null) {
-      emit(TMLebarKain(sKain: s_Kain, wKain: w_Kain, lKain: l_Kain));
+    if (lKain != null) {
+      emit(TMLebarKain(sKain: sKain, wKain: wKain, lKain: lKain));
     }
   }
 

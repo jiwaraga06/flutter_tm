@@ -39,7 +39,9 @@ class _LebarKainState extends State<LebarKain> {
                     Expanded(
                       child: TextFormField(
                         controller: controllerS,
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          suffixText: 'cm',
+                        ),
                       ),
                     ),
                   ],
@@ -52,7 +54,9 @@ class _LebarKainState extends State<LebarKain> {
                     Expanded(
                       child: TextFormField(
                         controller: controllerW,
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          suffixText: 'cm',
+                        ),
                       ),
                     ),
                   ],
@@ -65,7 +69,9 @@ class _LebarKainState extends State<LebarKain> {
                     Expanded(
                       child: TextFormField(
                         controller: controllerL,
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          suffixText: 'cm',
+                        ),
                         onEditingComplete: () {
                           BlocProvider.of<TmCubit>(context).lebarKain(controllerS.text, controllerW.text, controllerL.text);
                           Navigator.pushReplacementNamed(context, POINT_RUSAK);
