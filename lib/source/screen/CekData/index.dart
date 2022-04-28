@@ -34,7 +34,7 @@ class _CekDataState extends State<CekData> {
               ],
             );
           }
-          // var kain = (state as TmKain).kain;
+          var kain = (state as TmKain);
           // var lotProduksi = (state as TmLotProduksi).lotProduksi;
           // var beam = (state as TmBeam).beam;
           // var obat = (state as TmJenisObat).obat;
