@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_tm/source/data/Repository/repository.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_tm/source/router/string.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,10 +12,11 @@ class TmCubit extends Cubit<TmState> {
 
   TmCubit({this.myRepository}) : super(TmInitial());
 
-  void splash() async {
+  void splash(context) async {
     emit(TmSplashLoading());
     await Future.delayed(const Duration(seconds: 2));
     emit(TmSplashLoaded());
+    Navigator.pushReplacementNamed(context, CEK_DATA);
   }
 
   void getUID() async {
@@ -37,6 +38,12 @@ class TmCubit extends Cubit<TmState> {
     var sKain = pref.getString('s_Kain');
     var wKain = pref.getString('w_Kain');
     var lKain = pref.getString('l_Kain');
+    var point = pref.getString('point');
+    var grade = pref.getString('grade');
+    var panjangA = pref.getString('panjangA');
+    var panjangB = pref.getString('panjangB');
+    var panjangC = pref.getString('panjangC');
+    var statusInspect = pref.getString('statusInspect');
     emit(TmLoaded());
     if (kain != null) {
       emit(TmKain(kain: kain));
@@ -51,10 +58,28 @@ class TmCubit extends Cubit<TmState> {
       emit(TmBeam(beam: beam));
     }
     if (obat != null) {
-      emit(TmKain(kain: kain));
+      emit(TmJenisObat(obat: obat));
     }
     if (lKain != null) {
       emit(TMLebarKain(sKain: sKain, wKain: wKain, lKain: lKain));
+    }
+    if (point != null) {
+      emit(TMPointRusak(point: point));
+    }
+    if (grade != null) {
+      emit(TMGrade(grade: grade));
+    }
+    if (panjangA != null) {
+      emit(TMPanjangA(panjangA: panjangA));
+    }
+    if (panjangB != null) {
+      emit(TMPanjangB(panjangB: panjangB));
+    }
+    if (panjangC != null) {
+      emit(TMPanjangC(panjangC: panjangC));
+    }
+    if (statusInspect != null) {
+      emit(TMStatusInspect(status: statusInspect));
     }
   }
 

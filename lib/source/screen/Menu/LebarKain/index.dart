@@ -18,7 +18,7 @@ class _LebarKainState extends State<LebarKain> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LEBAR KAIN'),
+        title: const Text('Lebar Kain'),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(JENIS_OBAT);

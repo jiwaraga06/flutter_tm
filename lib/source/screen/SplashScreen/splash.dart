@@ -21,14 +21,13 @@ class _SplashScreenState extends State<SplashScreen> {
     //     statusBarIconBrightness: Brightness.dark,
     //   ),
     // );
-    BlocProvider.of<TmCubit>(context).splash();
+    BlocProvider.of<TmCubit>(context).splash(context);
     return Scaffold(
       body: BlocListener<TmCubit, TmState>(
         listener: (context, state) {
-          if(state is TmSplashLoaded){
-            Navigator.pushReplacementNamed(context, LOGIN);
-          }
-
+          // if(state is TmSplashLoaded){
+          //   Navigator.pushReplacementNamed(context, LOGIN);
+          // }
         },
         child: Center(
           child: LoadingAnimationWidget.staggeredDotsWave(

@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 const SPLASH_SCREEN = "/";
 const LOGIN = "/login";
 const REGISTER = "/register";
