@@ -1,4 +1,4 @@
-const SPLASH_SCREEN = "/";
+const SPLASH_SCREEN = "/splash";
 const LOGIN = "/login";
 const REGISTER = "/register";
 const DASHBOARD = "/dashboard";
@@ -14,4 +14,4 @@ const PANJANGA = "/PANJANGA";
 const PANJANGB = "/PANJANGB";
 const PANJANGC = "/PANJANGC";
 const STATUS_INSPECT = "/statusinspect";
-const CEK_DATA = "/cekData";
+const CEK_DATA = "/";

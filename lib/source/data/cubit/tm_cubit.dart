@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_tm/source/data/Repository/repository.dart';
 import 'package:meta/meta.dart';
 import 'package:device_info_plus/device_info_plus.dart';
@@ -30,16 +31,30 @@ class TmCubit extends Cubit<TmState> {
     var kain = pref.getString('kain');
     var lotProduksi = pref.getString('lotProduksi');
     var mesin = pref.getString('mesin');
+    var beam = pref.getString('beam');
+    var obat = pref.getString('obat');
+    var s_Kain = pref.getString('s_Kain');
+    var w_Kain = pref.getString('w_Kain');
+    var l_Kain = pref.getString('l_Kain');
     emit(TmLoaded());
     if (kain != null) {
       emit(TmKain(kain: kain));
     }
-    // if (lotProduksi != null) {
-    //   emit(TmLotProduksi(lotProduksi: lotProduksi));
-    // }
-    // if (mesin != null) {
-    //   emit(TmMesin(mesin: mesin));
-    // }
+    if (lotProduksi != null) {
+      emit(TmLotProduksi(lotProduksi: lotProduksi));
+    }
+    if (mesin != null) {
+      emit(TmMesin(mesin: mesin));
+    }
+    if (beam != null) {
+      emit(TmBeam(beam: beam));
+    }
+    if (obat != null) {
+      emit(TmKain(kain: kain));
+    }
+    if (l_Kain != null) {
+      emit(TMLebarKain(sKain: s_Kain, wKain: w_Kain, lKain: l_Kain));
+    }
   }
 
   void savekain(value) async {

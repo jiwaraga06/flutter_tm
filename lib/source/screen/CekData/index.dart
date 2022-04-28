@@ -44,13 +44,13 @@ class _CekDataState extends State<CekData> {
                       // Text(kain),
                       const Padding(
                         padding: EdgeInsets.only(bottom: 12.0),
-                        child: Text('Data Hasil Inputan', textAlign: TextAlign.center, style: TextStyle(fontSize: 18)),
+                        child: Text('Data Hasil Inputan', textAlign: TextAlign.center, style: TextStyle(fontSize: 20)),
                       ),
                       Table(
                         border: TableBorder.all(color: Colors.transparent),
                         columnWidths: const {
                           0: FixedColumnWidth(140.0),
-                          1: FixedColumnWidth(15.0),
+                          1: FixedColumnWidth(20.0),
                         },
                         children: const [
                           TableRow(children: [
@@ -59,7 +59,7 @@ class _CekDataState extends State<CekData> {
                               child: Text('Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Kain', style: TextStyle(fontSize: 17)),
+                            Text('kain', style: TextStyle(fontSize: 17)),
                           ]),
                           TableRow(children: [
                             Padding(
@@ -99,7 +99,7 @@ class _CekDataState extends State<CekData> {
                               child: Text('Lebar Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Lebar Kain S=S;', style: TextStyle(fontSize: 17)),
+                            Text('Lebar Kain S=S; W=W; L=L', style: TextStyle(fontSize: 17)),
                           ]),
                           TableRow(children: [
                             Padding(
