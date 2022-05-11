@@ -28,22 +28,22 @@ class TmCubit extends Cubit<TmState> {
 
   void getDataInsert() async {
     emit(TmLoading());
-    await Future.delayed(const Duration(seconds: 2));
     SharedPreferences pref = await SharedPreferences.getInstance();
     var kain = pref.getString('kain');
     var lotProduksi = pref.getString('lotProduksi');
     var mesin = pref.getString('mesin');
     var beam = pref.getString('beam');
     var obat = pref.getString('obat');
-    var sKain = pref.getString('s_Kain');
-    var wKain = pref.getString('w_Kain');
-    var lKain = pref.getString('l_Kain');
+    var sKain = pref.getString('S_kain');
+    var wKain = pref.getString('W_kain');
+    var lKain = pref.getString('L_kain');
     var point = pref.getString('point');
     var grade = pref.getString('grade');
     var panjangA = pref.getString('panjangA');
     var panjangB = pref.getString('panjangB');
     var panjangC = pref.getString('panjangC');
-    var statusInspect = pref.getString('statusInspect');
+    var statusinspect = pref.getString('statusInspect');
+    await Future.delayed(const Duration(seconds: 2));
     emit(TmLoaded());
     emit(TmMenu(
         kain: kain,
@@ -59,7 +59,7 @@ class TmCubit extends Cubit<TmState> {
         panjangA: panjangA,
         panjangB: panjangB,
         panjangC: panjangC,
-        status: statusInspect));
+        statusInspect: statusinspect));
     // if (kain != null) {
     //   emit(TmKain(kain: kain));
     // }

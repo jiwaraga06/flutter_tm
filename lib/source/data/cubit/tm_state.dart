@@ -27,7 +27,7 @@ class TmMenu extends TmState {
   final String? panjangA;
   final String? panjangB;
   final String? panjangC;
-  final String? status;
+  final String? statusInspect;
 
   TmMenu({
    required this.kain,
@@ -43,7 +43,7 @@ class TmMenu extends TmState {
    required this.panjangA,
    required this.panjangB,
    required this.panjangC,
-   required this.status,
+   required this.statusInspect,
   });
 }
 

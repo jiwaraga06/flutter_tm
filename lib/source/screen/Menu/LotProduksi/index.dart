@@ -47,7 +47,7 @@ class _LotProduksiState extends State<LotProduksi> {
                   hintText: 'Masukan Kode',
                 ),
                 onEditingComplete: () {
-                  BlocProvider.of<TmCubit>(context).saveLotProduksi(controller);
+                  BlocProvider.of<TmCubit>(context).saveLotProduksi(controller.text);
                   Navigator.pushReplacementNamed(context, NO_MESIN);
                 },
               ),

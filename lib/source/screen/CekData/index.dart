@@ -70,102 +70,102 @@ class _CekDataState extends State<CekData> {
                           0: FixedColumnWidth(140.0),
                           1: FixedColumnWidth(20.0),
                         },
-                        children:  [
+                        children: [
                           TableRow(children: [
                             const Padding(
-                              padding:  EdgeInsets.only(bottom: 8.0),
-                              child:  Text('Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              padding: EdgeInsets.only(bottom: 8.0),
+                              child: Text('Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text(menu.kain.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: const Text('Lot Produksi', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            ),
-                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            const Text('Lot Produksi', style: TextStyle(fontSize: 17)),
-                          ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
-                              child: const Text('Nomor Mesin', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              child: Text('Lot Produksi', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            const Text('Nomor Mesin', style: TextStyle(fontSize: 17)),
+                            Text(menu.lotProduksi.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
-                              child: const Text('Nomor Beam', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              child: Text('Nomor Mesin', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            const Text('Nomor Beam', style: TextStyle(fontSize: 17)),
+                            Text(menu.mesin.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                              padding: EdgeInsets.only(bottom: 8.0),
+                              child: Text('Nomor Beam', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            ),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.beam.toString(), style: const TextStyle(fontSize: 17)),
+                          ]),
+                          TableRow(children: [
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Jenis Obat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            const Text('Jenis Obat', style: TextStyle(fontSize: 17)),
+                            Text(menu.obat.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Lebar Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Lebar Kain S=S; W=W; L=L', style: TextStyle(fontSize: 17)),
+                            Text('Lebar kain S=${menu.sKain}; W=${menu.wKain}; L=${menu.lKain}', style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Point Rusak', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            const Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Point Rusak', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.point.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                          TableRow(children: [
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Grade', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Grade', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.grade.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                          TableRow(children: [
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang A', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Panjang A', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.panjangA.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                          TableRow(children: [
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang B', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Panjang B', style: TextStyle(fontSize: 17)),
+                            Text(menu.panjangB.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                          TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang C', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Panjang C', style: TextStyle(fontSize: 17)),
+                            Text(menu.panjangC.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          const TableRow(children: [
+                           TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Status Inspect', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Status Inspect', style: TextStyle(fontSize: 17)),
+                            Text(menu.statusInspect.toString(), style:const TextStyle(fontSize: 17)),
                           ]),
                         ],
                       ),

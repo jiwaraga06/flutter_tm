@@ -36,7 +36,7 @@ class _PanjangCState extends State<PanjangC> {
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).panjangC(controller.text);
-                Navigator.pushReplacementNamed(context, CEK_DATA);
+                Navigator.pushReplacementNamed(context, STATUS_INSPECT);
               },
             ),
           ),
