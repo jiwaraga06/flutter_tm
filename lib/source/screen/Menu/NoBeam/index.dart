@@ -32,6 +32,7 @@ class _NoBeamState extends State<NoBeam> {
               controller: controller,
               decoration: const InputDecoration(
                 hintText: 'Masukan Nomor Beam',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).saveBeam(controller.text);

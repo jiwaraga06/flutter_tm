@@ -33,6 +33,7 @@ class _PointRusakState extends State<PointRusak> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Kode Point Rusak',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).pointRusak(controller.text);

@@ -45,6 +45,7 @@ class _LotProduksiState extends State<LotProduksi> {
                 controller: controller,
                 decoration: const InputDecoration(
                   hintText: 'Masukan Kode',
+                  border: OutlineInputBorder(),
                 ),
                 onEditingComplete: () {
                   BlocProvider.of<TmCubit>(context).saveLotProduksi(controller.text);

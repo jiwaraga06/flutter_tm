@@ -31,6 +31,7 @@ class _NoMesinState extends State<NoMesin> {
               controller: controller,
               decoration: const InputDecoration(
                 hintText: 'Masukan Nama Mesin',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: (){
                 BlocProvider.of<TmCubit>(context).saveMesin(controller.text);

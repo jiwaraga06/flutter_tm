@@ -41,6 +41,7 @@ class _LebarKainState extends State<LebarKain> {
                         controller: controllerS,
                         decoration: const InputDecoration(
                           suffixText: 'cm',
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -56,6 +57,7 @@ class _LebarKainState extends State<LebarKain> {
                         controller: controllerW,
                         decoration: const InputDecoration(
                           suffixText: 'cm',
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -71,6 +73,7 @@ class _LebarKainState extends State<LebarKain> {
                         controller: controllerL,
                         decoration: const InputDecoration(
                           suffixText: 'cm',
+                          border: OutlineInputBorder(),
                         ),
                         onEditingComplete: () {
                           BlocProvider.of<TmCubit>(context).lebarKain(controllerS.text, controllerW.text, controllerL.text);

@@ -33,6 +33,7 @@ class _JenisObatState extends State<JenisObat> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Jenis Obat',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).jenisObat(controller.text);

@@ -33,6 +33,7 @@ class _PanjangBState extends State<PanjangB> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Panjang B',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).panjangB(controller.text);

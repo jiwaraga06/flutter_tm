@@ -12,7 +12,7 @@ class KainGreige extends StatefulWidget {
 
 class _KainGreigeState extends State<KainGreige> {
   TextEditingController controllerKode = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +29,7 @@ class _KainGreigeState extends State<KainGreige> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Kode',
+                border: OutlineInputBorder(),
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).savekain(controllerKode.text.toString());

@@ -33,6 +33,7 @@ class _StatusInspectState extends State<StatusInspect> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: 'Masukan Status Inspect',
+                border: OutlineInputBorder()
               ),
               onEditingComplete: () {
                 BlocProvider.of<TmCubit>(context).statusInspect(controller.text);
