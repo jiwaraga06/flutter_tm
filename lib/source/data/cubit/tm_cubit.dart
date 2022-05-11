@@ -60,42 +60,6 @@ class TmCubit extends Cubit<TmState> {
         panjangB: panjangB,
         panjangC: panjangC,
         statusInspect: statusinspect));
-    // if (kain != null) {
-    //   emit(TmKain(kain: kain));
-    // }
-    // if (lotProduksi != null) {
-    //   emit(TmLotProduksi(lotProduksi: lotProduksi));
-    // }
-    // if (mesin != null) {
-    //   emit(TmMesin(mesin: mesin));
-    // }
-    // if (beam != null) {
-    //   emit(TmBeam(beam: beam));
-    // }
-    // if (obat != null) {
-    //   emit(TmJenisObat(obat: obat));
-    // }
-    // if (lKain != null) {
-    //   emit(TMLebarKain(sKain: sKain, wKain: wKain, lKain: lKain));
-    // }
-    // if (point != null) {
-    //   emit(TMPointRusak(point: point));
-    // }
-    // if (grade != null) {
-    //   emit(TMGrade(grade: grade));
-    // }
-    // if (panjangA != null) {
-    //   emit(TMPanjangA(panjangA: panjangA));
-    // }
-    // if (panjangB != null) {
-    //   emit(TMPanjangB(panjangB: panjangB));
-    // }
-    // if (panjangC != null) {
-    //   emit(TMPanjangC(panjangC: panjangC));
-    // }
-    // if (statusInspect != null) {
-    //   emit(TMStatusInspect(status: statusInspect));
-    // }
   }
 
   void savekain(value) async {
