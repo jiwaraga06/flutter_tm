@@ -35,22 +35,6 @@ class _CekDataState extends State<CekData> {
             );
           }
           var menu = (state as TmMenu);
-          // var kain = (state as TmKain);
-          // var lotProduksi = (state as TmLotProduksi).lotProduksi;
-          // var beam = (state as TmBeam).beam;
-          // var obat = (state as TmJenisObat).obat;
-          // var sKain = (state as TMLebarKain).sKain;
-          // var wKain = (state as TMLebarKain).wKain;
-          // var lKain = (state as TMLebarKain).lKain;
-          // var point = (state as TMPointRusak).point;
-          // var grade = (state as TMGrade).grade;
-          // var panjangA = (state as TMPanjangA).panjangA;
-          // var panjangB = (state as TMPanjangB).panjangB;
-          // var panjangC = (state as TMPanjangC).panjangC;
-          // var statusInspect = (state as TMStatusInspect).status;
-          // if (kain!.isEmpty) {
-          //   return const Text("kainss");
-          // }
           return ListView(
             children: [
               Container(
