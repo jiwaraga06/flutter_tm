@@ -10,7 +10,42 @@ class TmSplashLoading extends TmState {}
 class TmSplashLoaded extends TmState {}
 
 class TmLoading extends TmState {}
+
 class TmLoaded extends TmState {}
+
+class TmMenu extends TmState {
+  final String? kain;
+  final String? lotProduksi;
+  final String? mesin;
+  final String? beam;
+  final String? obat;
+  final String? sKain;
+  final String? wKain;
+  final String? lKain;
+  final String? point;
+  final String? grade;
+  final String? panjangA;
+  final String? panjangB;
+  final String? panjangC;
+  final String? status;
+
+  TmMenu({
+   required this.kain,
+   required this.lotProduksi,
+   required this.mesin,
+   required this.beam,
+   required this.obat,
+   required this.sKain,
+   required this.wKain,
+   required this.lKain,
+   required this.point,
+   required this.grade,
+   required this.panjangA,
+   required this.panjangB,
+   required this.panjangC,
+   required this.status,
+  });
+}
 
 class TmKain extends TmState {
   final String? kain;

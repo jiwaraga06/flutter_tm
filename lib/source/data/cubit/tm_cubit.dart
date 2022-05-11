@@ -16,7 +16,7 @@ class TmCubit extends Cubit<TmState> {
     emit(TmSplashLoading());
     await Future.delayed(const Duration(seconds: 2));
     emit(TmSplashLoaded());
-    Navigator.pushReplacementNamed(context, CEK_DATA);
+    Navigator.pushReplacementNamed(context, LOGIN);
   }
 
   void getUID() async {
@@ -45,42 +45,57 @@ class TmCubit extends Cubit<TmState> {
     var panjangC = pref.getString('panjangC');
     var statusInspect = pref.getString('statusInspect');
     emit(TmLoaded());
-    if (kain != null) {
-      emit(TmKain(kain: kain));
-    }
-    if (lotProduksi != null) {
-      emit(TmLotProduksi(lotProduksi: lotProduksi));
-    }
-    if (mesin != null) {
-      emit(TmMesin(mesin: mesin));
-    }
-    if (beam != null) {
-      emit(TmBeam(beam: beam));
-    }
-    if (obat != null) {
-      emit(TmJenisObat(obat: obat));
-    }
-    if (lKain != null) {
-      emit(TMLebarKain(sKain: sKain, wKain: wKain, lKain: lKain));
-    }
-    if (point != null) {
-      emit(TMPointRusak(point: point));
-    }
-    if (grade != null) {
-      emit(TMGrade(grade: grade));
-    }
-    if (panjangA != null) {
-      emit(TMPanjangA(panjangA: panjangA));
-    }
-    if (panjangB != null) {
-      emit(TMPanjangB(panjangB: panjangB));
-    }
-    if (panjangC != null) {
-      emit(TMPanjangC(panjangC: panjangC));
-    }
-    if (statusInspect != null) {
-      emit(TMStatusInspect(status: statusInspect));
-    }
+    emit(TmMenu(
+        kain: kain,
+        lotProduksi: lotProduksi,
+        mesin: mesin,
+        beam: beam,
+        obat: obat,
+        sKain: sKain,
+        wKain: wKain,
+        lKain: lKain,
+        point: point,
+        grade: grade,
+        panjangA: panjangA,
+        panjangB: panjangB,
+        panjangC: panjangC,
+        status: statusInspect));
+    // if (kain != null) {
+    //   emit(TmKain(kain: kain));
+    // }
+    // if (lotProduksi != null) {
+    //   emit(TmLotProduksi(lotProduksi: lotProduksi));
+    // }
+    // if (mesin != null) {
+    //   emit(TmMesin(mesin: mesin));
+    // }
+    // if (beam != null) {
+    //   emit(TmBeam(beam: beam));
+    // }
+    // if (obat != null) {
+    //   emit(TmJenisObat(obat: obat));
+    // }
+    // if (lKain != null) {
+    //   emit(TMLebarKain(sKain: sKain, wKain: wKain, lKain: lKain));
+    // }
+    // if (point != null) {
+    //   emit(TMPointRusak(point: point));
+    // }
+    // if (grade != null) {
+    //   emit(TMGrade(grade: grade));
+    // }
+    // if (panjangA != null) {
+    //   emit(TMPanjangA(panjangA: panjangA));
+    // }
+    // if (panjangB != null) {
+    //   emit(TMPanjangB(panjangB: panjangB));
+    // }
+    // if (panjangC != null) {
+    //   emit(TMPanjangC(panjangC: panjangC));
+    // }
+    // if (statusInspect != null) {
+    //   emit(TMStatusInspect(status: statusInspect));
+    // }
   }
 
   void savekain(value) async {

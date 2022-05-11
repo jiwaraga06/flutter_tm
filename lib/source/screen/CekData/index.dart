@@ -34,7 +34,8 @@ class _CekDataState extends State<CekData> {
               ],
             );
           }
-          var kain = (state as TmKain);
+          var menu = (state as TmMenu);
+          // var kain = (state as TmKain);
           // var lotProduksi = (state as TmLotProduksi).lotProduksi;
           // var beam = (state as TmBeam).beam;
           // var obat = (state as TmJenisObat).obat;
@@ -69,101 +70,101 @@ class _CekDataState extends State<CekData> {
                           0: FixedColumnWidth(140.0),
                           1: FixedColumnWidth(20.0),
                         },
-                        children: const [
+                        children:  [
                           TableRow(children: [
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text('Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Padding(
+                              padding:  EdgeInsets.only(bottom: 8.0),
+                              child:  Text('Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('kain', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.kain.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
+                          const TableRow(children: [
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text('Lot Produksi', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: const Text('Lot Produksi', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Lot Produksi', style: TextStyle(fontSize: 17)),
+                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text('Lot Produksi', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
+                          const TableRow(children: [
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text('Nomor Mesin', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              child: const Text('Nomor Mesin', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Nomor Mesin', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text('Nomor Mesin', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
+                          const TableRow(children: [
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text('Nomor Beam', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                              child: const Text('Nomor Beam', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Nomor Beam', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text('Nomor Beam', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                          const TableRow(children: [
+                            const Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Jenis Obat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Jenis Obat', style: TextStyle(fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text('Jenis Obat', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                          const TableRow(children: [
+                            const Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Lebar Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Lebar Kain S=S; W=W; L=L', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                          const TableRow(children: [
+                            const Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Point Rusak', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Point Rusak', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
+                          const TableRow(children: [
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Grade', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Grade', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
+                          const TableRow(children: [
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang A', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(':', style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Panjang A', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
+                          const TableRow(children: [
                             Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
+                              padding: const EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang B', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Panjang B', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
+                          const TableRow(children: [
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Panjang C', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Panjang C', style: TextStyle(fontSize: 17)),
                           ]),
-                          TableRow(children: [
-                            Padding(
+                          const TableRow(children: [
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Status Inspect', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
-                            Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text('Status Inspect', style: TextStyle(fontSize: 17)),
                           ]),
                         ],
