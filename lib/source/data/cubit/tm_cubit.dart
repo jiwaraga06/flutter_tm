@@ -37,7 +37,7 @@ class TmCubit extends Cubit<TmState> {
     var sKain = pref.getString('S_kain');
     var wKain = pref.getString('W_kain');
     var lKain = pref.getString('L_kain');
-    var point = pref.getString('point');
+    var pointRusak = pref.getString('point');
     var grade = pref.getString('grade');
     var panjangA = pref.getString('panjangA');
     var panjangB = pref.getString('panjangB');
@@ -54,7 +54,7 @@ class TmCubit extends Cubit<TmState> {
         sKain: sKain,
         wKain: wKain,
         lKain: lKain,
-        point: point,
+        pointRusak: pointRusak,
         grade: grade,
         panjangA: panjangA,
         panjangB: panjangB,

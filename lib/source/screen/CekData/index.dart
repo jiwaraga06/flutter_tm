@@ -101,7 +101,7 @@ class _CekDataState extends State<CekData> {
                               child: Text('Lebar Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Lebar kain S=${menu.sKain}; W=${menu.wKain}; L=${menu.lKain}', style: const TextStyle(fontSize: 17)),
+                            Text('Lebar kain S=${menu.sKain};  W=${menu.wKain};  L=${menu.lKain}', style: const TextStyle(fontSize: 17)),
                           ]),
                           TableRow(children: [
                             const Padding(
@@ -109,7 +109,7 @@ class _CekDataState extends State<CekData> {
                               child: Text('Point Rusak', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text(menu.point.toString(), style: const TextStyle(fontSize: 17)),
+                            Text(menu.pointRusak.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
                           TableRow(children: [
                             const Padding(
@@ -143,13 +143,13 @@ class _CekDataState extends State<CekData> {
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             Text(menu.panjangC.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
-                           TableRow(children: [
+                          TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Status Inspect', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text(menu.statusInspect.toString(), style:const TextStyle(fontSize: 17)),
+                            Text(menu.statusInspect.toString(), style: const TextStyle(fontSize: 17)),
                           ]),
                         ],
                       ),

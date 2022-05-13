@@ -22,7 +22,7 @@ class TmMenu extends TmState {
   final String? sKain;
   final String? wKain;
   final String? lKain;
-  final String? point;
+  final String? pointRusak;
   final String? grade;
   final String? panjangA;
   final String? panjangB;
@@ -30,93 +30,93 @@ class TmMenu extends TmState {
   final String? statusInspect;
 
   TmMenu({
-   required this.kain,
-   required this.lotProduksi,
-   required this.mesin,
-   required this.beam,
-   required this.obat,
-   required this.sKain,
-   required this.wKain,
-   required this.lKain,
-   required this.point,
-   required this.grade,
-   required this.panjangA,
-   required this.panjangB,
-   required this.panjangC,
-   required this.statusInspect,
+    required this.kain,
+    required this.lotProduksi,
+    required this.mesin,
+    required this.beam,
+    required this.obat,
+    required this.sKain,
+    required this.wKain,
+    required this.lKain,
+    required this.pointRusak,
+    required this.grade,
+    required this.panjangA,
+    required this.panjangB,
+    required this.panjangC,
+    required this.statusInspect,
   });
 }
 
-class TmKain extends TmState {
-  final String? kain;
+// class TmKain extends TmState {
+//   final String? kain;
 
-  TmKain({this.kain});
-}
+//   TmKain({this.kain});
+// }
 
-class TmLotProduksi extends TmState {
-  final String? lotProduksi;
+// class TmLotProduksi extends TmState {
+//   final String? lotProduksi;
 
-  TmLotProduksi({this.lotProduksi});
-}
+//   TmLotProduksi({this.lotProduksi});
+// }
 
-class TmMesin extends TmState {
-  final String? mesin;
+// class TmMesin extends TmState {
+//   final String? mesin;
 
-  TmMesin({this.mesin});
-}
+//   TmMesin({this.mesin});
+// }
 
-class TmBeam extends TmState {
-  final String? beam;
+// class TmBeam extends TmState {
+//   final String? beam;
 
-  TmBeam({this.beam});
-}
+//   TmBeam({this.beam});
+// }
 
-class TmJenisObat extends TmState {
-  final String? obat;
+// class TmJenisObat extends TmState {
+//   final String? obat;
 
-  TmJenisObat({this.obat});
-}
+//   TmJenisObat({this.obat});
+// }
 
-class TMLebarKain extends TmState {
-  final String? sKain;
-  final String? wKain;
-  final String? lKain;
+// class TMLebarKain extends TmState {
+//   final String? sKain;
+//   final String? wKain;
+//   final String? lKain;
 
-  TMLebarKain({this.sKain, this.wKain, this.lKain});
-}
+//   TMLebarKain({this.sKain, this.wKain, this.lKain});
+// }
 
-class TMPointRusak extends TmState {
-  final String? point;
+// class TMPointRusak extends TmState {
+//   final String? point;
 
-  TMPointRusak({this.point});
-}
+//   TMPointRusak({this.point});
+// }
 
-class TMGrade extends TmState {
-  final String? grade;
+// class TMGrade extends TmState {
+//   final String? grade;
 
-  TMGrade({this.grade});
-}
+//   TMGrade({this.grade});
+// }
 
-class TMPanjangA extends TmState {
-  final String? panjangA;
+// class TMPanjangA extends TmState {
+//   final String? panjangA;
 
-  TMPanjangA({this.panjangA});
-}
+//   TMPanjangA({this.panjangA});
+// }
 
-class TMPanjangB extends TmState {
-  final String? panjangB;
+// class TMPanjangB extends TmState {
+//   final String? panjangB;
 
-  TMPanjangB({this.panjangB});
-}
+//   TMPanjangB({this.panjangB});
+// }
 
-class TMPanjangC extends TmState {
-  final String? panjangC;
+// class TMPanjangC extends TmState {
+//   final String? panjangC;
 
-  TMPanjangC({this.panjangC});
-}
+//   TMPanjangC({this.panjangC});
+// }
 
-class TMStatusInspect extends TmState {
-  final String? status;
+// class TMStatusInspect extends TmState {
+//   final String? status;
 
-  TMStatusInspect({this.status});
-}
+//   TMStatusInspect({this.status});
+// }
