@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_tm/source/router/router.dart';
-import 'package:flutter_tm/source/screen/SplashScreen/splash.dart';
 
 void main() {
   runApp(MyApp(
@@ -14,7 +12,6 @@ class MyApp extends StatelessWidget {
   final RouterNavigation? router;
   const MyApp({Key? key, this.router}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setSystemUIOverlayStyle(
@@ -27,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter TM',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ThemeData().colorScheme.copyWith(primary:const Color(0xFF8FBDD3)),
+        colorScheme: ThemeData().colorScheme.copyWith(primary: const Color(0xFF8FBDD3)),
       ),
       // router navigasi
       onGenerateRoute: router!.generateRoute,
