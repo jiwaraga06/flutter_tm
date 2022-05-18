@@ -14,6 +14,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController controllerKode = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,33 +27,58 @@ class _LoginState extends State<Login> {
           const SizedBox(height: 50),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.5,
-                  child: TextFormField(
-                    controller: controllerKode,
-                    decoration: InputDecoration(
-                      hintText: 'Please insert Operator Code',
-                      prefixIcon: Icon(FontAwesomeIcons.userSecret),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10),
+            child: Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.5,
+                    child: TextFormField(
+                      controller: controllerKode,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey[200],
+                        hintText: 'Please insert Operator Code',
+                        prefixIcon: Icon(FontAwesomeIcons.userSecret),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please fill this column';
+                        }
+                      },
                     ),
                   ),
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.5,
-                  child: TextFormField(
-                    controller: controllerPassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Please insert Operator Password',
-                      prefixIcon: Icon(FontAwesomeIcons.lock),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 1.5,
+                    child: TextFormField(
+                      controller: controllerPassword,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        hintText: 'Please insert Operator Password',
+                        prefixIcon: Icon(FontAwesomeIcons.lock),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please fill this column';
+                        }
+                      },
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 20.0),
@@ -84,8 +110,10 @@ class _LoginState extends State<Login> {
                   width: MediaQuery.of(context).size.width / 2.5,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, KAIN_GREIGE);
-                      BlocProvider.of<TmCubit>(context).saveCodeOP(controllerKode.text);
+                      if (formKey.currentState!.validate()) {
+                        Navigator.pushReplacementNamed(context, KAIN_GREIGE);
+                        BlocProvider.of<TmCubit>(context).saveCodeOP(controllerKode.text);
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       elevation: 4.0,

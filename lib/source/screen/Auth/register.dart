@@ -14,6 +14,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   TextEditingController controllerKode = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<TmCubit>(context).getUID();
@@ -27,33 +28,58 @@ class _RegisterState extends State<Register> {
           const SizedBox(height: 50),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 2,
-                  child: TextFormField(
-                    controller: controllerKode,
-                    decoration: InputDecoration(
-                      hintText: 'Please insert Code',
-                      prefixIcon: Icon(FontAwesomeIcons.userSecret),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10),
+            child: Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: TextFormField(
+                      controller: controllerKode,
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        hintText: 'Please insert Code',
+                        prefixIcon: Icon(FontAwesomeIcons.userSecret),
+                         border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please fill this column';
+                        }
+                      },
                     ),
                   ),
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 2,
-                  child: TextFormField(
-                    controller: controllerPassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Please insert Password',
-                      prefixIcon: Icon(FontAwesomeIcons.lock),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: TextFormField(
+                      controller: controllerPassword,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        hintText: 'Please insert Password',
+                        prefixIcon: Icon(FontAwesomeIcons.lock),
+                         border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please fill this column';
+                        }
+                      },
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 20.0),
