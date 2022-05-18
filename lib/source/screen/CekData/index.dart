@@ -43,7 +43,6 @@ class _CekDataState extends State<CekData> {
                   child: ListView(
                     shrinkWrap: true,
                     children: [
-                      // Text(kain),
                       const Padding(
                         padding: EdgeInsets.only(bottom: 12.0),
                         child: Text('Data Hasil Inputan', textAlign: TextAlign.center, style: TextStyle(fontSize: 20)),
@@ -55,6 +54,14 @@ class _CekDataState extends State<CekData> {
                           1: FixedColumnWidth(20.0),
                         },
                         children: [
+                          TableRow(children: [
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
+                              child: Text('Code Operator', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            ),
+                            const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+                            Text(menu.codeOperator.toString(), style: const TextStyle(fontSize: 17)),
+                          ]),
                           TableRow(children: [
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
@@ -101,7 +108,7 @@ class _CekDataState extends State<CekData> {
                               child: Text('Lebar Kain', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
                             ),
                             const Text(':', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
-                            Text('Lebar kain S=${menu.sKain};  W=${menu.wKain};  L=${menu.lKain}', style: const TextStyle(fontSize: 17)),
+                            Text('S=${menu.sKain};  W=${menu.wKain};  L=${menu.lKain}', style: const TextStyle(fontSize: 17)),
                           ]),
                           TableRow(children: [
                             const Padding(

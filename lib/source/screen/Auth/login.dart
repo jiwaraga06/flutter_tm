@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 import 'package:flutter_tm/source/router/string.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,7 +33,7 @@ class _LoginState extends State<Login> {
                   child: TextFormField(
                     controller: controllerKode,
                     decoration: InputDecoration(
-                      hintText: 'Please insert Code',
+                      hintText: 'Please insert Operator Code',
                       prefixIcon: Icon(FontAwesomeIcons.userSecret),
                       contentPadding: EdgeInsets.symmetric(vertical: 10),
                     ),
@@ -44,7 +46,7 @@ class _LoginState extends State<Login> {
                     controller: controllerPassword,
                     obscureText: true,
                     decoration: InputDecoration(
-                      hintText: 'Please insert Password',
+                      hintText: 'Please insert Operator Password',
                       prefixIcon: Icon(FontAwesomeIcons.lock),
                       contentPadding: EdgeInsets.symmetric(vertical: 10),
                     ),
@@ -83,6 +85,7 @@ class _LoginState extends State<Login> {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, KAIN_GREIGE);
+                      BlocProvider.of<TmCubit>(context).saveCodeOP(controllerKode.text);
                     },
                     style: ElevatedButton.styleFrom(
                       elevation: 4.0,

@@ -14,6 +14,7 @@ class TmLoading extends TmState {}
 class TmLoaded extends TmState {}
 
 class TmMenu extends TmState {
+  final String? codeOperator;
   final String? kain;
   final String? lotProduksi;
   final String? mesin;
@@ -44,6 +45,7 @@ class TmMenu extends TmState {
     required this.panjangB,
     required this.panjangC,
     required this.statusInspect,
+    required this.codeOperator,
   });
 }
 

@@ -16,7 +16,7 @@ class TmCubit extends Cubit<TmState> {
     emit(TmSplashLoading());
     await Future.delayed(const Duration(seconds: 2));
     emit(TmSplashLoaded());
-    Navigator.pushReplacementNamed(context, CEK_DATA);
+    Navigator.pushReplacementNamed(context, LOGIN);
   }
 
   void getUID() async {
@@ -29,6 +29,9 @@ class TmCubit extends Cubit<TmState> {
   void getDataInsert() async {
     emit(TmLoading());
     SharedPreferences pref = await SharedPreferences.getInstance();
+    // Code Operator
+    var codeOperator = pref.getString('codeOperator');
+    // INPUTAN
     var kain = pref.getString('kain');
     var lotProduksi = pref.getString('lotProduksi');
     var mesin = pref.getString('mesin');
@@ -46,6 +49,7 @@ class TmCubit extends Cubit<TmState> {
     await Future.delayed(const Duration(seconds: 2));
     emit(TmLoaded());
     emit(TmMenu(
+        codeOperator: codeOperator,
         kain: kain,
         lotProduksi: lotProduksi,
         mesin: mesin,
@@ -60,6 +64,11 @@ class TmCubit extends Cubit<TmState> {
         panjangB: panjangB,
         panjangC: panjangC,
         statusInspect: statusinspect));
+  }
+
+  void saveCodeOP(value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('codeOperator', value);
   }
 
   void savekain(value) async {
