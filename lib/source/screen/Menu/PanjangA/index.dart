@@ -12,6 +12,7 @@ class PanjangA extends StatefulWidget {
 
 class _PanjangAState extends State<PanjangA> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +29,27 @@ class _PanjangAState extends State<PanjangA> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: controller,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                hintText: 'Panjang A',
-                border: OutlineInputBorder(),
+            child: Form(
+              key: formKey,
+              child: TextFormField(
+                controller: controller,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: 'Panjang A',
+                  border: OutlineInputBorder(),
+                ),
+                onEditingComplete: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<TmCubit>(context).panjangA(controller.text);
+                    Navigator.pushReplacementNamed(context, PANJANGB);
+                  }
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please insert this column";
+                  }
+                },
               ),
-              onEditingComplete: () {
-                BlocProvider.of<TmCubit>(context).panjangA(controller.text);
-                Navigator.pushReplacementNamed(context, PANJANGB);
-              },
             ),
           ),
         ],

@@ -12,6 +12,7 @@ class NoBeam extends StatefulWidget {
 
 class _NoBeamState extends State<NoBeam> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,16 +29,26 @@ class _NoBeamState extends State<NoBeam> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: controller,
-              decoration: const InputDecoration(
-                hintText: 'Masukan Nomor Beam',
-                border: OutlineInputBorder(),
+            child: Form(
+              key: formKey,
+              child: TextFormField(
+                controller: controller,
+                decoration: const InputDecoration(
+                  hintText: 'Masukan Nomor Beam',
+                  border: OutlineInputBorder(),
+                ),
+                onEditingComplete: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<TmCubit>(context).saveBeam(controller.text);
+                    Navigator.pushReplacementNamed(context, JENIS_OBAT);
+                  }
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please insert this column";
+                  }
+                },
               ),
-              onEditingComplete: () {
-                BlocProvider.of<TmCubit>(context).saveBeam(controller.text);
-                Navigator.pushReplacementNamed(context, JENIS_OBAT);
-              },
             ),
           ),
         ],

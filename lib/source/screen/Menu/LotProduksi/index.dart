@@ -12,6 +12,7 @@ class LotProduksi extends StatefulWidget {
 
 class _LotProduksiState extends State<LotProduksi> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<TmCubit>(context).getDataInsert();
@@ -27,30 +28,28 @@ class _LotProduksiState extends State<LotProduksi> {
         ),
         body: ListView(
           children: [
-            // BlocBuilder<TmCubit, TmState>(
-            //   builder: (context, state) {
-            //     if (state is TmLoading) {
-            //       return const Text('loading');
-            //     }
-            //     var kain = (state as TmKain).kain;
-            //     if (kain!.isEmpty) {
-            //       return const Text("kainss");
-            //     }
-            //     return Text(kain);
-            //   },
-            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: controller,
-                decoration: const InputDecoration(
-                  hintText: 'Masukan Kode',
-                  border: OutlineInputBorder(),
+              child: Form(
+                key: formKey,
+                child: TextFormField(
+                  controller: controller,
+                  decoration: const InputDecoration(
+                    hintText: 'Masukan Kode',
+                    border: OutlineInputBorder(),
+                  ),
+                  onEditingComplete: () {
+                    if(formKey.currentState!.validate()){
+                      BlocProvider.of<TmCubit>(context).saveLotProduksi(controller.text);
+                    Navigator.pushReplacementNamed(context, NO_MESIN);
+                    }
+                  },
+                  validator: (value){
+                    if(value == null || value.isEmpty){
+                      return "Please insert this column";
+                    }
+                  },
                 ),
-                onEditingComplete: () {
-                  BlocProvider.of<TmCubit>(context).saveLotProduksi(controller.text);
-                  Navigator.pushReplacementNamed(context, NO_MESIN);
-                },
               ),
             ),
           ],

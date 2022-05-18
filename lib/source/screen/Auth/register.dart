@@ -88,7 +88,9 @@ class _RegisterState extends State<Register> {
             child: SizedBox(
               height: 40,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if(formKey.currentState!.validate()){}
+                },
                 style: ElevatedButton.styleFrom(
                   elevation: 4.0,
                   primary: Color(0xFF5584AC),

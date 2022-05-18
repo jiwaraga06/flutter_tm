@@ -4,7 +4,7 @@ import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
 import 'package:flutter_tm/source/router/string.dart';
 
 class Grade extends StatefulWidget {
-  const Grade({ Key? key }) : super(key: key);
+  const Grade({Key? key}) : super(key: key);
 
   @override
   State<Grade> createState() => _GradeState();
@@ -12,6 +12,7 @@ class Grade extends StatefulWidget {
 
 class _GradeState extends State<Grade> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +29,27 @@ class _GradeState extends State<Grade> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: controller,
-              maxLength: 1,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                hintText: 'Masukan Grade',
+            child: Form(
+              key: formKey,
+              child: TextFormField(
+                controller: controller,
+                maxLength: 1,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: 'Masukan Grade',
+                ),
+                onEditingComplete: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<TmCubit>(context).grade(controller.text);
+                    Navigator.pushReplacementNamed(context, PANJANGA);
+                  }
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please insert this column";
+                  }
+                },
               ),
-              onEditingComplete: (){
-                BlocProvider.of<TmCubit>(context).grade(controller.text);
-                Navigator.pushReplacementNamed(context, PANJANGA);
-              },
             ),
           ),
         ],

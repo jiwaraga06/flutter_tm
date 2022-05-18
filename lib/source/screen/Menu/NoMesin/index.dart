@@ -11,6 +11,7 @@ class NoMesin extends StatefulWidget {
 
 class _NoMesinState extends State<NoMesin> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,16 +28,26 @@ class _NoMesinState extends State<NoMesin> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: controller,
-              decoration: const InputDecoration(
-                hintText: 'Masukan Nama Mesin',
-                border: OutlineInputBorder(),
+            child: Form(
+              key: formKey,
+              child: TextFormField(
+                controller: controller,
+                decoration: const InputDecoration(
+                  hintText: 'Masukan Nama Mesin',
+                  border: OutlineInputBorder(),
+                ),
+                onEditingComplete: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<TmCubit>(context).saveMesin(controller.text);
+                    Navigator.pushReplacementNamed(context, NO_BEAM);
+                  }
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please insert this column";
+                  }
+                },
               ),
-              onEditingComplete: (){
-                BlocProvider.of<TmCubit>(context).saveMesin(controller.text);
-                Navigator.pushReplacementNamed(context, NO_BEAM);
-              },
             ),
           ),
         ],

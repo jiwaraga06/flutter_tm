@@ -12,6 +12,7 @@ class JenisObat extends StatefulWidget {
 
 class _JenisObatState extends State<JenisObat> {
   TextEditingController controller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,17 +29,27 @@ class _JenisObatState extends State<JenisObat> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: controller,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                hintText: 'Masukan Jenis Obat',
-                border: OutlineInputBorder(),
+            child: Form(
+              key: formKey,
+              child: TextFormField(
+                controller: controller,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: 'Masukan Jenis Obat',
+                  border: OutlineInputBorder(),
+                ),
+                onEditingComplete: () {
+                  if (formKey.currentState!.validate()) {
+                    BlocProvider.of<TmCubit>(context).jenisObat(controller.text);
+                    Navigator.pushReplacementNamed(context, LEBAR_KAIN);
+                  }
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please insert this column";
+                  }
+                },
               ),
-              onEditingComplete: () {
-                BlocProvider.of<TmCubit>(context).jenisObat(controller.text);
-                Navigator.pushReplacementNamed(context, LEBAR_KAIN);
-              },
             ),
           ),
         ],
