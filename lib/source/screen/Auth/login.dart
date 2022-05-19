@@ -50,6 +50,7 @@ class _LoginState extends State<Login> {
                         if (value == null || value.isEmpty) {
                           return 'Please fill this column';
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -74,6 +75,7 @@ class _LoginState extends State<Login> {
                         if (value == null || value.isEmpty) {
                           return 'Please fill this column';
                         }
+                        return null;
                       },
                     ),
                   ),
