@@ -16,7 +16,7 @@ class TmCubit extends Cubit<TmState> {
     emit(TmSplashLoading());
     await Future.delayed(const Duration(seconds: 2));
     emit(TmSplashLoaded());
-    Navigator.pushReplacementNamed(context, CEK_DATA);
+    Navigator.pushReplacementNamed(context, LOGIN);
   }
 
   void getUID() async {

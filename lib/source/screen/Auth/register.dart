@@ -1,4 +1,3 @@
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tm/source/data/cubit/tm_cubit.dart';
@@ -20,8 +19,8 @@ class _RegisterState extends State<Register> {
     BlocProvider.of<TmCubit>(context).getUID();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF61A4BC),
-        title: Text('Register'),
+        backgroundColor:const Color(0xFF61A4BC),
+        title:const Text('Register'),
       ),
       body: ListView(
         children: [
@@ -40,17 +39,18 @@ class _RegisterState extends State<Register> {
                         fillColor: Colors.grey[200],
                         filled: true,
                         hintText: 'Please insert Code',
-                        prefixIcon: Icon(FontAwesomeIcons.userSecret),
+                        prefixIcon: const Icon(FontAwesomeIcons.userSecret),
                          border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
                           borderSide: BorderSide.none,
                         ),
-                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 10),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please fill this column';
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -64,17 +64,18 @@ class _RegisterState extends State<Register> {
                         fillColor: Colors.grey[200],
                         filled: true,
                         hintText: 'Please insert Password',
-                        prefixIcon: Icon(FontAwesomeIcons.lock),
+                        prefixIcon: const Icon(FontAwesomeIcons.lock),
                          border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
                           borderSide: BorderSide.none,
                         ),
-                        contentPadding: EdgeInsets.symmetric(vertical: 10),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 10),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please fill this column';
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -93,8 +94,8 @@ class _RegisterState extends State<Register> {
                 },
                 style: ElevatedButton.styleFrom(
                   elevation: 4.0,
-                  primary: Color(0xFF5584AC),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0), side: BorderSide(color: const Color(0xFF5584AC))),
+                  primary: const Color(0xFF5584AC),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0), side: const BorderSide(color: Color(0xFF5584AC))),
                 ),
                 child: const Text('REGISTER'),
               ),
